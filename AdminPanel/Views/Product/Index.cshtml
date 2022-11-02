@@ -1,0 +1,42 @@
+﻿@using EntityLayer
+@model List<Product>
+
+@{
+	ViewData["Title"] = "Ürünler";
+
+}
+
+<table id="example" class="table table-dark table-striped" style="width:100%">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Description</th>
+			<th>Price</th>
+			<th>Stock</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var a in Model)
+		{
+			<tr>
+				<td>@a.id</td>
+				<td>@a.name</td>
+				<td>@a.description</td>
+				<td>@a.price</td>
+				<td>@a.stock</td>
+				<td>
+					<a asp-controller="Product" asp-action="Delete" asp-route-id="@a.id" class="btn btn-danger" style="width:100px">Sil</a>
+					<a asp-controller="Product" asp-action="Update" asp-route-id="@a.id" class="btn btn-primary" style="width:100px">Güncelle</a>
+				</td>
+
+			</tr>
+		}
+	</tbody>
+</table>
+
+<div class=" ">
+
+	<a href="/Product/Add" class="btn btn-success">Ürün Ekle</a>
+
+</div>

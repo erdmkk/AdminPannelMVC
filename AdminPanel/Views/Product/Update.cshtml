@@ -1,0 +1,33 @@
+﻿@model EntityLayer.Product
+
+@{
+	ViewData["Title"] = "Güncelle";
+
+}
+
+<h1>Ürün Güncelle</h1>
+
+<form asp-action="Update" asp-controller="Product" method="post">
+    <div style="display:none" class="mb-3">
+        <label for="id" class="form-label">Ürün ID</label>
+        <input readonly type="text" class="form-control" asp-for="id">
+    </div>
+    <div class="mb-3">
+        <label for="name" class="form-label">Ürün Adı</label>
+        <input type="text" class="form-control" asp-for="name">
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Açıklama</label>
+        <input type="text" class="form-control" asp-for="description">
+    </div>
+    <div class="mb-3">
+        <label for="price" class="form-label">Fiyat</label>
+        <input type="text" class="form-control" asp-for="price">
+    </div>
+    <div class="mb-3">
+        <label for="stock" class="form-label">Stok</label>
+        <input type="text" class="form-control" asp-for="stock">
+    </div>
+
+    <button type="submit" class="btn btn-primary">ÜRÜNÜ GÜNCELLE </button>
+</form>

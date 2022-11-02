@@ -1,0 +1,31 @@
+﻿@model EntityLayer.Product
+
+@{
+    ViewData["Title"] = "Ekle";
+
+}
+
+
+<h1>Ürün Ekle</h1>
+
+<form asp-action="Add" asp-controller="Product" method="post">
+
+    <div class="mb-3">
+        <label for="name" class="form-label">Ürün Adı:</label>
+        <input type="text" class="form-control" asp-for="name">
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Ürün Açıklaması</label>
+        <input type="text" class="form-control" asp-for="description">
+    </div>
+    <div class="mb-3">
+        <label for="price" class="form-label">Fiyat</label>
+        <input type="text" class="form-control" asp-for="price">
+    </div>
+    <div class="mb-3">
+        <label for="stock" class="form-label">Stok</label>
+        <input type="text" class="form-control" asp-for="stock">
+    </div>
+
+    <button type="submit" class="btn btn-primary">ÜRÜN EKLE</button>
+</form>
